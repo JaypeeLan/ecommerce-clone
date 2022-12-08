@@ -1,19 +1,21 @@
-// import logo from './logo.svg';
 import React from "react";
-import Navbar from "./components/Navbar";
-import Slider from "./components/Slider";
-
-import Announcement from "./components/Announcement";
 import "./App.css";
-import Categories from "./components/Categories";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+// import Home from "./pages/Home";
+// import ProductList from "./pages/ProductList";
+import Product from "./pages/Product";
+import Register from "./pages/Register";
 
 function App() {
   return (
     <div className="App">
-      <Announcement />
-      <Navbar />
-      <Slider />
-      <Categories/>
+      {/* <Home /> */}
+      {/* <ProductList /> */}
+      {/* <Product /> */}
+      {/* <Login /> */}
+      {/* <Register /> */}
+      <Cart />
     </div>
   );
 }

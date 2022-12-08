@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
@@ -96,23 +96,6 @@ const Slider = () => {
       </Arrow>
 
       <Wrapper slideIndex={slideIndex}>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.bg}>
             <ImageDisplay>
@@ -126,18 +109,6 @@ const Slider = () => {
             </ItemInfo>
           </Slide>
         ))}
-        
-
-
-
-
-
-
-
-
-
-
-
       </Wrapper>
 
       <Arrow direction="right" onClick={() => handleClick("right")}>

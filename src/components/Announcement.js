@@ -10,12 +10,7 @@ const Container = styled.div`
 `;
 
 const Announcement = () => {
-  return (
-    <Container>
-      {" "}
-      loremlfsh fjfkjlsl mdvkfs lmknsmlds jldskjsb hkbfhvsdfhj bvsjhbsdhj
-    </Container>
-  );
+  return <Container> Get all products at 20% off today only!!</Container>;
 };
 
 export default Announcement;
