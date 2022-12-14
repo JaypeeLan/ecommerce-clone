@@ -1,4 +1,5 @@
 import React from "react";
+import { mobile } from "../responsive";
 import {
   Facebook,
   Instagram,
@@ -12,6 +13,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -46,6 +48,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 
 const Title = styled.h3`
