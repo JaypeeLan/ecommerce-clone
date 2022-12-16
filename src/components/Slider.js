@@ -7,7 +7,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   background-color: #${(props) => props.bg};
@@ -50,7 +50,7 @@ const Slide = styled.div`
 
 const ImageDisplay = styled.div`
   flex: 1;
-  height: 80%;
+  min-height: 80%;
   display: grid;
   place-items: center;
 `;

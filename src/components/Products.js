@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { popularProducts } from "../data";
 import Product from "./Product.js";
+import useFetch from "../hooks/useFetch";
+import { ThreeDots } from "react-loader-spinner";
 
 const Container = styled.div`
   padding: 20px;
@@ -10,12 +11,26 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const Products = () => {
+const Products = ({ category }) => {
+  const { data, error, isLoading } = useFetch(
+    category
+      ? `https://fakestoreapi.com/products/category/${category}`
+      : "https://fakestoreapi.com/products",
+    [category]
+  );
+
   return (
     <Container>
-      {popularProducts.map((item) => (
-        <Product item={item} key={item.id} />
-      ))}
+      {!!error ? (
+        <p>An error occured. Please try</p>
+      ) : isLoading ? (
+        <div style={{ margin: "0 auto" }}>
+          <p>loading..</p>
+          <ThreeDots stroke="#FF0000" />
+        </div>
+      ) : (
+        <>{data && data.map((item) => <Product item={item} key={item.id} />)}</>
+      )}
     </Container>
   );
 };

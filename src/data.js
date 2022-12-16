@@ -29,20 +29,23 @@ export const categories = [
   {
     id: 1,
     img:
-      "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "SHIRT STYLE!",
+      "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "ELECTRONICS",
+    category: "electronics",
   },
   {
     id: 2,
     img:
-      "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "LOUNGEWEAR LOVE",
+      "https://images.pexels.com/photos/935985/pexels-photo-935985.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "JEWELLERIES",
+    category: "jewelleries",
   },
   {
     id: 3,
     img:
       "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    title: "LIGHT JACKETS",
+    title: "CLOTHINGS",
+    category: "men's clothings",
   },
 ];
 
