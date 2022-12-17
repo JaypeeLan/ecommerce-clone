@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Badge from "@mui/material/Badge";
 import { Search, ShoppingCartOutlined } from "@mui/icons-material";
 import { mobile } from "../responsive";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Navigationbar = styled.nav`
   min-height: 60px;
@@ -69,6 +71,8 @@ const Logo = styled.h1`
 `;
 
 const Navbar = () => {
+  const cartQuantity = useSelector((state) => state.cart.quantity);
+
   return (
     <Navigationbar>
       <NavWrapper>
@@ -88,11 +92,13 @@ const Navbar = () => {
         <Right>
           <MenuItem> Register </MenuItem>
           <MenuItem> Sign In </MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
+          <Link to="/cart">
+            <MenuItem>
+              <Badge badgeContent={cartQuantity} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuItem>
+          </Link>
         </Right>
       </NavWrapper>
     </Navigationbar>
