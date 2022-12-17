@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { Add, Remove } from "@mui/icons-material";
+import React from "react";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -60,6 +59,7 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
   ${mobile({ flexDirection: "column" })}
 `;
 
@@ -83,40 +83,9 @@ const ProductName = styled.span``;
 
 const ProductId = styled.span``;
 
-const ProductColor = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-`;
-
 const ProductSize = styled.span``;
 
-const PriceDetail = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const ProductAmountContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-`;
-
-const ProductAmount = styled.div`
-  font-size: 24px;
-  margin: 5px;
-  ${mobile({ margin: "5px 15px" })}
-`;
-
-const ProductPrice = styled.div`
-  font-size: 30px;
-  font-weight: 200;
-  ${mobile({ marginBottom: "20px" })}
-`;
+const ProductAmount = styled.span``;
 
 const Hr = styled.hr`
   background-color: #eee;
@@ -129,7 +98,7 @@ const Summary = styled.div`
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh;
+  min-height: 40vh;
 `;
 
 const SummaryTitle = styled.h1`
@@ -158,19 +127,17 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+
   return (
     <Container>
       <Navbar />
       <Announcement />
       <Wrapper>
-        <Title>YOUR BAG</Title>
+        <Title>CART</Title>
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
+            <TopText>Shopping Bag({cart.quantity})</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
@@ -194,18 +161,12 @@ const Cart = () => {
                         <ProductSize>
                           <b>Rating:</b> {product.rating.rate}
                         </ProductSize>
+                        <ProductAmount>
+                          {" "}
+                          <b>Price: </b> ${product.price * product.quantity}
+                        </ProductAmount>
                       </Details>
                     </ProductDetail>
-                    <PriceDetail>
-                      <ProductAmountContainer>
-                        <Add />
-                        <ProductAmount>{product.quantity}</ProductAmount>
-                        <Remove />
-                      </ProductAmountContainer>
-                      <ProductPrice>
-                        ${product.price * product.quantity}
-                      </ProductPrice>
-                    </PriceDetail>
                   </Product>
                 </>
               ))}

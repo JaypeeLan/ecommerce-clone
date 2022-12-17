@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { useDispatch } from "react-redux";
 import { addProducts } from "../redux/cartRedux";
+import { BallTriangle } from "react-loader-spinner";
 
 const Container = styled.div``;
 
@@ -25,9 +26,9 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 90vh;
-  object-fit: cover;
-  ${mobile({ height: "40vh" })}
+  min-height: 90vh;
+  object-fit: contain;
+  ${mobile({ minHeight: "60vh" })}
 `;
 
 const InfoContainer = styled.div`
@@ -84,11 +85,10 @@ const FilterSize = styled.select`
 const FilterSizeOption = styled.option``;
 
 const AddContainer = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${mobile({ width: "100%" })}
 `;
 
 const AmountContainer = styled.div`
@@ -109,7 +109,8 @@ const Amount = styled.span`
 `;
 
 const Button = styled.button`
-  padding: 15px;
+  padding: 0.6rem;
+  font: 12px;
   border: 2px solid teal;
   background-color: white;
   cursor: pointer;
@@ -124,6 +125,8 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   // ------------------------------------
+
+  //  fetch each product by its id
   const { id } = useParams();
   // ----------------------------------
   const { data, error, isLoading } = useFetch(
@@ -132,7 +135,7 @@ const Product = () => {
   // --------------------------------------------
 
   const addToCart = () => {
-    // update cart
+    // update cart store
     dispatch(addProducts({ ...data, quantity }));
   };
 
@@ -145,8 +148,30 @@ const Product = () => {
   };
   return (
     <>
-      {isLoading && <p>loading</p>}
-      {error && <p> error..</p>}
+      {isLoading && (
+        <div
+          style={{
+            height: "100vh",
+            width: "100%",
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <BallTriangle
+            height={100}
+            width={100}
+            radius={5}
+            color="#4fa94d"
+            ariaLabel="loading"
+            visible={true}
+          />
+        </div>
+      )}
+      {error && (
+        <div style={{ margin: "0 auto", fontSize: "40px" }}>
+          <p> An error occured.. Please try again.</p>
+        </div>
+      )}
 
       {data && (
         <>

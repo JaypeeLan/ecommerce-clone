@@ -44,6 +44,7 @@ const Button = styled.button`
   font-size: 1rem;
 `;
 
+// shows the categories on the home page
 const CategoryItem = ({ item }) => {
   return (
     <Container>

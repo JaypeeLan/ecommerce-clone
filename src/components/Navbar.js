@@ -71,6 +71,7 @@ const Logo = styled.h1`
 `;
 
 const Navbar = () => {
+  // updates number of cart (from redux store) on the cart badge logo
   const cartQuantity = useSelector((state) => state.cart.quantity);
 
   return (
@@ -86,12 +87,18 @@ const Navbar = () => {
         </Left>
 
         <Center>
-          <Logo> Hello </Logo>
+          <Link to="/">
+            <Logo> Hello </Logo>
+          </Link>
         </Center>
 
         <Right>
-          <MenuItem> Register </MenuItem>
-          <MenuItem> Sign In </MenuItem>
+          <Link to="/register">
+            <MenuItem> Register </MenuItem>
+          </Link>
+          <Link to="/login">
+            <MenuItem> Sign In </MenuItem>
+          </Link>
           <Link to="/cart">
             <MenuItem>
               <Badge badgeContent={cartQuantity} color="primary">

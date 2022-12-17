@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  FavoriteBorderOutlined,
-  SearchOutlined,
-  ShoppingCartOutlined,
-} from "@mui/icons-material";
+import { SearchOutlined, ShoppingCartOutlined } from "@mui/icons-material";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -27,7 +23,7 @@ const Container = styled.div`
   flex: 1;
   margin: 5px;
   min-width: 280px;
-  height: 350px;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,6 +65,7 @@ const Icon = styled.div`
   }
 `;
 
+// shows each products and icons
 const Product = ({ item }) => {
   return (
     <Container>
@@ -82,9 +79,6 @@ const Product = ({ item }) => {
           <Link to={`/product/${item.id}`}>
             <SearchOutlined />
           </Link>
-        </Icon>
-        <Icon>
-          <FavoriteBorderOutlined />
         </Icon>
       </Info>
     </Container>

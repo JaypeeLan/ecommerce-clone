@@ -13,6 +13,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
+  color: white;
+  background-color: black;
   ${mobile({ flexDirection: "column" })}
 `;
 

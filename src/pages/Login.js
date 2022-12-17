@@ -55,23 +55,25 @@ const Link = styled.a`
   margin: 5px 0px;
   font-size: 12px;
   text-decoration: underline;
-  cursor: pointer;
 `;
 
 const Login = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>SIGN IN</Title>
-        <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Button>LOGIN</Button>
-          <Link>FORGOT PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
-        </Form>
-      </Wrapper>
-    </Container>
+    <>
+      <Container>
+        <Wrapper>
+          <Title>SIGN IN</Title>
+          <Form>
+            <Input placeholder="username" />
+            <Input placeholder="password" />
+            <Button>LOGIN</Button>
+            <Link>FORGOT PASSWORD?</Link>
+            <Link>CREATE A NEW ACCOUNT</Link>
+            <Link href="/">Homepage</Link>
+          </Form>
+        </Wrapper>
+      </Container>
+    </>
   );
 };
 

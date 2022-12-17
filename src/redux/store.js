@@ -37,3 +37,5 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+// refer to redux toolkit docs to see how redux persist works

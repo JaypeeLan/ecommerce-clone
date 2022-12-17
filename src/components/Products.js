@@ -11,6 +11,9 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
+// displayes each products according to the category (if it's available)
+//else just shows all the products
+
 const Products = ({ category }) => {
   const { data, error, isLoading } = useFetch(
     category
@@ -22,7 +25,7 @@ const Products = ({ category }) => {
   return (
     <Container>
       {!!error ? (
-        <p>An error occured. Please try</p>
+        <p>An error occured. Please try again.</p>
       ) : isLoading ? (
         <div style={{ margin: "0 auto" }}>
           <p>loading..</p>

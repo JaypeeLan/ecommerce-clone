@@ -16,6 +16,12 @@ const Container = styled.div`
   justify-content: center;
 `;
 
+const Link = styled.a`
+  margin: 5px 0px;
+  font-size: 12px;
+  text-decoration: underline;
+`;
+
 const Wrapper = styled.div`
   width: 50%;
   min-width: 300px;
@@ -72,6 +78,7 @@ const Register = () => {
           </Agreement>
           <Button>CREATE</Button>
         </Form>
+        <Link href="/">Homepage</Link>
       </Wrapper>
     </Container>
   );
