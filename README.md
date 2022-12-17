@@ -1,4 +1,5 @@
 # Ecommerce clone with react and redux toolkit
+[Live](https://ecommercecloneapp.netlify.app/)
 
 [fake store API](https://fakestoreapi.com/)
 [Redux persist](https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist)
