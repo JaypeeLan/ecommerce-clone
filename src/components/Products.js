@@ -18,7 +18,7 @@ const Products = ({ category }) => {
   const { data, error, isLoading } = useFetch(
     category
       ? `https://fakestoreapi.com/products/category/${category}`
-      : "https://fakestoreapi.com/products",
+      : "https://fakestoreapi.com/products?limit=8",
     [category]
   );
 
